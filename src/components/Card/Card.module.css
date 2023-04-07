@@ -1,0 +1,61 @@
+.Card{
+    background-image: url('./Mensajes-vacios-WhatsApp-1-e1487670556536.png');
+    background-size:contain;
+    width: 280px;
+    height: 355px;
+    border-radius: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.images{
+    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+    margin-top: 35px;
+    margin-left: 110px;
+    align-content: right;
+}
+
+.buttonClose{
+    width: 25px;
+    height: 25px;
+    margin-left: 14px;
+
+}
+
+.buttonDiv{
+    display: flex;
+    justify-content:flex-start;
+    height: 25;
+    margin-top: 22px;
+}
+
+.name{
+    background-color:#DCF8C6;
+    margin-left: 7px;
+    font-family:Open-Sanz;
+    font-size: 20px;
+    width: max-content;
+    margin-right: 10px;
+    padding: 0px 5px;
+    border-radius: 5px;
+    margin-top: 0px;
+
+}
+
+.nameDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nameQuestion{
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: Open-Sanz;
+    font-size: 20px;
+    width: 70px;
+    height: 22px;
+    border-radius: 5px;
+}
