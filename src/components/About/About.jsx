@@ -1,6 +1,9 @@
+import style from './About.module.css'
+
 const About = () => {
     return (
-        <div>
+        <div className={style.container}>
+            <h3>Este sitio fue creado por:</h3>
             <h1>Sebastian Satelier</h1>
         </div>
     )

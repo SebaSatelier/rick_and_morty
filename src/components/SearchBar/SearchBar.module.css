@@ -1,0 +1,46 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+
+
+.buttons{
+
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #2c0b8e;
+    background-color: black;
+}
+
+.buttons:hover {
+    background-color: #2c0b8e;
+}
+
+/* Agrega un estilo adicional cuando el botón está deshabilitado */
+.buttons[disabled] {
+opacity: 0.5;
+cursor: default;
+pointer-events: none;
+border-color: #999;
+color: #999;
+}
+
+.input{
+    border-radius: 5px;
+    border: 2px solid #2c0b8e;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+}

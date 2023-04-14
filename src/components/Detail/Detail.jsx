@@ -1,11 +1,12 @@
     import axios from 'axios'
-    import { useParams } from 'react-router-dom';
+    import { useParams} from 'react-router-dom';
     import { useState,useEffect } from 'react';
+    import style from './Detail.module.css'
 
 
 
     const Detail = () => {
-        const {id} = useParams()
+        const {id} = useParams();
 
         const [character,setCharacter] = useState({})
         
@@ -23,13 +24,15 @@
 
         return (
             <div>
-                <h1>{character.name}</h1>
+                <div className={style.container} >
+                    <h1>{character.name}</h1>
 
-                <h2>STATUS: {character.status}</h2>
-                <h2>{character.species}</h2>
-                <h2>{character.gender}</h2>
-                <h2>{character.origin?.name}</h2>
-                <img src={character.image} alt={character.name}/>
+                    <h2>STATUS: {character.status}</h2>
+                    <h2>{character.species}</h2>
+                    <h2>{character.gender}</h2>
+                    <h2>{character.origin?.name}</h2>
+                    <img className={style.img} src={character.image} alt={character.name}/>
+                </div>
             </div>
         )
     }

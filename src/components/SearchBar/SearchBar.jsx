@@ -1,7 +1,7 @@
 import { useState } from "react";
+import styleSearchBar from './SearchBar.module.css'
 
-
-export default function SearchBar({onSearch}) {
+export default function SearchBar({onSearch,location}) {
    let [id,setId] = useState("")
 
    const handleChange = (event) =>{
@@ -10,9 +10,9 @@ export default function SearchBar({onSearch}) {
 
    
    return (
-      <div>
-         <input type='search' onChange = {handleChange} value={id}/>
-         <button onClick={() => onSearch(id)}>Agregar</button>
+      <div className={styleSearchBar.container}>
+         <input className={styleSearchBar.input} type='search' onChange = {handleChange} value={id} placeholder="ID del personaje"/>
+         <button className={styleSearchBar.buttons} onClick={() => onSearch(id)} disabled={(location.pathname !== '/about' && location.pathname !== '/favorites') ? false:true}>Agregar</button>
       </div>
    );
 }

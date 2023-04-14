@@ -9,6 +9,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.body-bg{
+  background-image: url('./images/espacio-estrellas-universo-espacio-infinito-fondo_78474-99.avif');
+  background-size: cover;
+  margin: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

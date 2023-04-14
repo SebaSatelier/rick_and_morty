@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 import styleNavBar from './NavBar.module.css'
 
-const NavBar = ({onSearch, logOut})=>{
+const NavBar = ({onSearch, logOut, location})=>{
 
     const aleatorio = ()=>{
         let id = Math.floor(Math.random() * (826 - 1) + 1)
@@ -11,20 +11,22 @@ const NavBar = ({onSearch, logOut})=>{
 
     return(
         <nav className={styleNavBar.NavBar}>
-            <div className={styleNavBar.buttonDiv}>
-                <button>
-                    <Link to='/about'>About</Link>
-                </button>
-                <button>
-                    <Link to="/home">Home</Link>
-                </button>
-                <button onClick={aleatorio}>
+            <div className={styleNavBar.buttonsDiv}>
+                
+                <Link to='/about'><button className={styleNavBar.buttons}>About </button></Link>
+
+                <Link to="/home"><button className={styleNavBar.buttons}> Home</button></Link>
+
+                <Link to="/favorites"><button className={styleNavBar.buttons}> Favorites</button></Link>
+                
+                <button className={styleNavBar.buttons} onClick={aleatorio} disabled={(location.pathname !== '/about' && location.pathname !== '/favorites') ? false:true} >
                     Agregar Personaje
                 </button>
-            </div>
+            </div>  
 
-            <SearchBar onSearch={onSearch}/>
-            <button onClick={logOut}>
+            <SearchBar onSearch={onSearch} location={location}/>
+
+            <button className={styleNavBar.buttons} onClick={logOut} >
                 Cerrar sesion
             </button>
         </nav>
