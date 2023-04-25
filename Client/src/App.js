@@ -10,9 +10,7 @@ import Error from './components/Error/Error';
 import Form from './components/Form/Form';
 import Favorites from './components/Favorites/Favorites'
 
-const EMAIL = 'a@a.com'
-const PASSWORD = 'asdasd1'
-
+const URL = 'http://localhost:3001/rickandmorty';
 
 function App() {
    const [characters,setCharacters] = useState([])
@@ -23,10 +21,15 @@ function App() {
    
    const location = useLocation();
    
-   function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
+   const login = async (userData) => {
+      try{
+      const {email,password} = userData;
+         const {data} = await axios(`${URL}/login?email=${email}&password=${password}`);
+         const access = data.access
+         setAccess(access);
+         access && navigate('/home')
+      }catch(error){
+         return error.message
       }
    }
 
@@ -53,14 +56,16 @@ function App() {
       };
     }, [location]);
    
-   function onSearch(id) {
+   const onSearch = async (id) => {
       if(!id) return window.alert('¡Debes ingresar un ID válido!');
       if(!repeat(characters,id)){
-         axios(`https://rickandmortyapi.com/api/character/${id}`)
-         .then(({ data }) => {
+         try{
+            const {data} = await axios(`${URL}/character/${id}`);
                setCharacters((oldCharacter) => [...oldCharacter,data] );
                
-            }).catch(() => window.alert('¡No hay personajes con este ID!'))
+         }catch(error){
+            return window.alert('¡No hay personajes con este ID!')
+         }   
       }
       else {
         window.alert('¡Ese personaje ya se encuentra renderizado!')

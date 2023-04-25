@@ -12,7 +12,7 @@ export default function SearchBar({onSearch,location}) {
    return (
       <div className={styleSearchBar.container}>
          <input className={styleSearchBar.input} type='search' onChange = {handleChange} value={id} placeholder="ID del personaje"/>
-         <button className={styleSearchBar.buttons} onClick={() => onSearch(id)} disabled={(location.pathname !== '/about' && location.pathname !== '/favorites') ? false:true}>Agregar</button>
+         <button className={styleSearchBar.buttons} onClick={() => {onSearch(id); setId('')}} disabled={(location.pathname !== '/about' && location.pathname !== '/favorites') ? false:true}>Agregar</button>
       </div>
    );
 }
