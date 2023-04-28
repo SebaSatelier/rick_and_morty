@@ -2,6 +2,13 @@
 
 let myFavorites = [];
 
+
+const getFav = (request,response) =>{
+    if(request.url.includes("/fav")){
+    return response.status(200).json(myFavorites)
+    }
+}
+
 const postFav = (request,response) =>{
     const favorite = request.body
     myFavorites.push(favorite)
@@ -19,5 +26,6 @@ const deleteFav = (request,response)=>{
 
 module.exports = {
     postFav,
-    deleteFav
+    deleteFav,
+    getFav
 }

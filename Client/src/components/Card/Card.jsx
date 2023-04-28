@@ -14,7 +14,6 @@ const Card = ({gender,name, id, image, onClose, addFav,removeFav, myFavorites}) 
    const location = useLocation()
 
    const detail = useParams()
-   console.log(detail)
    
    const [isFav,setIsFav] = useState(false)
    

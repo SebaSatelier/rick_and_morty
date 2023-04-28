@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 import styleNavBar from './NavBar.module.css'
 
+
 const NavBar = ({onSearch, logOut, location})=>{
 
     const aleatorio = ()=>{
         let id = Math.floor(Math.random() * (826 - 1) + 1)
         onSearch(id)
     }
+
 
     return(
         <nav className={styleNavBar.NavBar}>
