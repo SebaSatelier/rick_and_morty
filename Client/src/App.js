@@ -37,7 +37,7 @@ function App() {
          const access = data.access
          setAccess(access);
          access && navigate('/home')
-         recuperarFavoritos()
+         // recuperarFavoritos()
       }catch(error){
          return error.message
       }

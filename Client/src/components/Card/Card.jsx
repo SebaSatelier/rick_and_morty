@@ -10,7 +10,7 @@ import { AiFillHeart, AiOutlineHeart,AiOutlineCloseSquare } from 'react-icons/ai
 
 
 
-const Card = ({gender,name, id, image, onClose, addFav,removeFav, myFavorites}) => {
+const Card = ({gender,name, id, image, onClose,status,species,origin, addFav,removeFav, myFavorites}) => {
    const location = useLocation()
 
    const detail = useParams()
@@ -25,7 +25,7 @@ const Card = ({gender,name, id, image, onClose, addFav,removeFav, myFavorites}) 
       }
       if(!isFav){
          setIsFav(true)
-         addFav({name,image,id,gender})
+         addFav({name,image,id,gender, status, species})
       }
       console.log(myFavorites);
    }

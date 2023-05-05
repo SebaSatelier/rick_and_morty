@@ -1,17 +1,18 @@
 const {getCharById} = require('../controllers/getCharById');
-const {getLogin} = require('../controllers/login');
-const {postFav, deleteFav, getFav} = require('../controllers/handleFavorites');
+const {postUser, login, postFav, deleteFav} = require('../controllers')
 const express = require('express');
 
 const router = express.Router();
 
 router.get('/character/:id',getCharById)
 
-router.get('/login', getLogin)
+router.get('/login', login);
 
-router.post('/fav', postFav)
+router.post('/login', postUser);
 
-router.get('/fav', getFav)
+router.post('/fav', postFav);
+
+// router.get('/fav', getFav)
 
 router.delete('/fav/:id', deleteFav)
 
